@@ -20,9 +20,19 @@
 </style>
 </head>
 <body>
-    <input id="bin1" value="TEST">
+    <input id="bin1" value="Write Message Here">
+    <button class = "button button1" onclick = "encrypt()">Encrypt</button>
+    <button class = "button button2" onclick = "decrypt()">Decrypt</button>
     <input id="bin2"/>
-    <button class = "button button1" onclick = "">Encrypt</button>
-    <button class = "button button2" onclick = "">Decrypt</button>
+    <script>
+        function encrypt() {
+            var output = document.getElementById("bin2");
+            var input = document.getElementById("bin1").value;
+            output.value = "";
+            for (var i = 0; i < input.length; i++) {
+                output.value += input[i].charCodeAt(0).toString(2) + " ";
+            }
+        }
+    </script>
 </body>
 </html>
